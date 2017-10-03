@@ -16,19 +16,18 @@ var customLaunchers = {
     platform: 'linux',
     version: 'latest-1'
   },
-  // FIXME(jgershen): Tests in Firefox work locally but not on Sauce...?
-  // sl_firefox_latest: {
-  //   base: 'SauceLabs',
-  //   browserName: 'firefox',
-  //   platform: 'linux',
-  //   version: 'latest'
-  // },
-  // sl_firefox_latest_1: {
-  //   base: 'SauceLabs',
-  //   browserName: 'firefox',
-  //   platform: 'linux',
-  //   version: 'latest-1'
-  // },
+  sl_firefox_latest: {
+    base: 'SauceLabs',
+    browserName: 'firefox',
+    platform: 'linux',
+    version: 'latest'
+  },
+  sl_firefox_latest_1: {
+    base: 'SauceLabs',
+    browserName: 'firefox',
+    platform: 'linux',
+    version: 'latest-1'
+  },
   sl_safari_9: {
     base: 'SauceLabs',
     browserName: 'safari',

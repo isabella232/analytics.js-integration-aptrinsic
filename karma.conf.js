@@ -11,7 +11,7 @@ module.exports = function(config) {
     browserDisconnectTimeout: 100000,
     browserNoActivityTimeout: 100000,
 
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS', 'Chrome'],
 
     frameworks: ['browserify', 'mocha'],
 

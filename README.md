@@ -1,6 +1,6 @@
 # analytics.js-integration-olark [![Build Status][ci-badge]][ci-link]
 
-Olark integration for [Analytics.js][].
+Aptrinsic integration for [Analytics.js][].
 
 ## License
 

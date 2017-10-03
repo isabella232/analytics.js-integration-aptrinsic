@@ -1,12 +1,12 @@
 {
-  "name": "@segment/analytics.js-integration-olark",
-  "description": "The Olark analytics.js integration.",
+  "name": "@segment/analytics.js-integration-aptrinsic",
+  "description": "The Aptrinsic analytics.js integration.",
   "version": "2.0.0",
   "keywords": [
     "analytics.js",
     "analytics.js-integration",
     "segment",
-    "olark"
+    "Aptrinsic"
   ],
   "main": "lib/index.js",
   "scripts": {
@@ -14,21 +14,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/segment-integrations/analytics.js-integration-olark.git"
+    "url": "git+https://github.com/segment-integrations/analytics.js-integration-aptrinsic.git"
   },
   "author": "Segment <friends@segment.com>",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/segment-integrations/analytics.js-integration-olark/issues"
+    "url": "https://github.com/segment-integrations/analytics.js-integration-aptrinsic/issues"
   },
-  "homepage": "https://github.com/segment-integrations/analytics.js-integration-olark#readme",
+  "homepage": "https://github.com/segment-integrations/analytics.js-integration-aptrinsic#readme",
   "dependencies": {
     "@segment/analytics.js-integration": "^2.1.0",
     "next-tick": "^0.2.2",
     "use-https": "^0.1.1"
   },
   "devDependencies": {
-    "once-component": "^0.0.1",
     "@segment/analytics.js-core": "^3.0.0",
     "@segment/analytics.js-integration-tester": "^2.0.0",
     "@segment/clear-env": "^2.0.0",
@@ -43,13 +42,16 @@
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.1",
     "karma-junit-reporter": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
     "mocha": "^2.2.5",
     "npm-check": "^5.2.1",
+    "once-component": "^0.0.1",
     "phantomjs-prebuilt": "^2.1.7",
     "watchify": "^3.7.0"
   }
