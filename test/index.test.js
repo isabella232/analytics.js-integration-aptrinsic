@@ -10,7 +10,7 @@ describe('Aptrinsic', function() {
   var analytics;
   var aptrinsic;
   var options = {
-    apiKey: 'integration-test-key'
+    apiKey: 'test-key'
   };
 
   beforeEach(function() {
@@ -38,6 +38,7 @@ describe('Aptrinsic', function() {
       integration('Aptrinsic')
         .global('aptrinsic')
         .option('apiKey', '')
+        .tag('<script src="https://web-sdk.aptrinsic.com/api/aptrinsic.js">')
     );
   });
 
@@ -98,8 +99,9 @@ describe('Aptrinsic', function() {
         };
 
         analytics.identify(userId, userAttrs);
-        analytics.called(window.aptrinsic,'identify');
+        analytics.called(window.aptrinsic, 'identify');
       });
+
       it('should identify with the address data', function() {
         var userId = '1234';
         var userAttrs = {
@@ -150,7 +152,7 @@ describe('Aptrinsic', function() {
       it('should send an cust id', function() {
         analytics.spy(window, 'aptrinsic');
         analytics.group('custId');
-        analytics.called(window.aptrinsic,'identify');
+        analytics.called(window.aptrinsic, 'identify');
       });
     });
 
@@ -170,7 +172,7 @@ describe('Aptrinsic', function() {
           accountType: 'Test'
         };
         analytics.track(eventName, eventProperties);
-        analytics.called(window.aptrinsic,'event', eventName, eventProperties);
+        analytics.called(window.aptrinsic, 'event', eventName, eventProperties);
       });
     });
   });
