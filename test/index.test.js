@@ -61,6 +61,7 @@ describe('Aptrinsic', function() {
       analytics.initialize();
     });
 
+    // Skipping as there is currently no way to actually test a successful load of the SDK.
     it.skip('Integration should be loaded', function() {
       analytics.assert(aptrinsic.loaded());
     });
