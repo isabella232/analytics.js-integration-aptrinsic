@@ -30,17 +30,17 @@ module.exports = function(config) {
     },
 
     browserify: {
-      debug: true,
-      transform: [
-        [
-          'browserify-istanbul',
-          {
-            instrumenterConfig: {
-              embedSource: true
-            }
-          }
-        ]
-      ]
+      debug: true
+      // transform: [
+      //   [
+      //     'browserify-istanbul',
+      //     {
+      //       instrumenterConfig: {
+      //         embedSource: true
+      //       }
+      //     }
+      //   ]
+      // ]
     },
 
     coverageReporter: {

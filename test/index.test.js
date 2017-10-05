@@ -10,13 +10,12 @@ describe('Aptrinsic', function() {
   var analytics;
   var aptrinsic;
   var options = {
-    apiKey: 'test-key'
+    apiKey: 'AP-YAQYR6RUCNGM-1'
   };
 
   beforeEach(function() {
     analytics = new Analytics();
     aptrinsic = new Aptrinsic(options);
-
     analytics.use(Aptrinsic);
     analytics.use(tester);
     analytics.add(aptrinsic);
@@ -24,12 +23,14 @@ describe('Aptrinsic', function() {
   });
 
   afterEach(function() {
-    analytics.restore();
-    analytics.reset();
-    aptrinsic.reset();
-    analytics.user().reset();
-    analytics.group().reset();
-    sandbox();
+    analytics.waitForScripts(function() {
+      analytics.restore();
+      analytics.reset();
+      aptrinsic.reset();
+      analytics.user().reset();
+      analytics.group().reset();
+      sandbox();
+    });
   });
 
   it('should have the right settings', function() {
@@ -44,9 +45,6 @@ describe('Aptrinsic', function() {
 
   describe('before loading', function() {
     describe('#initialize', function() {
-      afterEach(function() {
-        aptrinsic.reset();
-      });
       it('should create window.aptrinsic', function() {
         analytics.initialize();
         analytics.assert(aptrinsic.loaded());
@@ -63,31 +61,39 @@ describe('Aptrinsic', function() {
       analytics.initialize();
     });
 
-    it('Integration should be loaded', function() {
+    it.skip('Integration should be loaded', function() {
       analytics.assert(aptrinsic.loaded());
     });
 
     describe('#identify', function() {
-      beforeEach(function() {
-        analytics.spy(window, 'aptrinsic');
+      beforeEach(function(done) {
+        // override the agent loaded message
+        analytics.once('ready', function() {
+          done();
+        });
+        analytics.initialize();
       });
 
       it('should identify anonymous user', function() {
+        analytics.stub(window, 'aptrinsic');
         analytics.identify();
         analytics.called(window.aptrinsic, 'identify');
       });
 
       it('should identify with the given id', function() {
+        analytics.stub(window, 'aptrinsic');
         analytics.identify('id');
         analytics.called(window.aptrinsic,'identify');
       });
 
       it('should send the given id and gender', function() {
+        analytics.stub(window, 'aptrinsic');
         analytics.identify('id', { gender: 'FEMALE' });
         analytics.called(window.aptrinsic,'identify');
       });
 
       it('should identify with the user data', function() {
+        analytics.stub(window, 'aptrinsic');
         var userId = '1234';
         var userAttrs = {
           email: 'test@example.com',
@@ -103,6 +109,7 @@ describe('Aptrinsic', function() {
       });
 
       it('should identify with the address data', function() {
+        analytics.stub(window, 'aptrinsic');
         var userId = '1234';
         var userAttrs = {
           email: 'test@example.com',
@@ -125,6 +132,7 @@ describe('Aptrinsic', function() {
       });
 
       it('should identify with the company data', function() {
+        analytics.stub(window, 'aptrinsic');
         var userId = '1234';
         var userAttrs = {
           email: 'test@example.com',
@@ -150,7 +158,7 @@ describe('Aptrinsic', function() {
       });
 
       it('should send an cust id', function() {
-        analytics.spy(window, 'aptrinsic');
+        analytics.stub(window, 'aptrinsic');
         analytics.group('custId');
         analytics.called(window.aptrinsic, 'identify');
       });
@@ -165,7 +173,7 @@ describe('Aptrinsic', function() {
       });
 
       it('should send a track event', function() {
-        analytics.spy(window, 'aptrinsic');
+        analytics.stub(window, 'aptrinsic');
         var eventName = 'Registered';
         var eventProperties = {
           plan: 'Pro Annual',
