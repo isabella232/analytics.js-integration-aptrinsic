@@ -1,13 +1,13 @@
-# analytics.js-integration-aptrinsic
-[![CircleCI](https://circleci.com/gh/segment-integrations/analytics.js-integration-aptrinsic.svg?style=svg&circle-token=e4cf681a9ecaca7541ce24b042ef669f234932bd)](https://circleci.com/gh/segment-integrations/analytics.js-integration-aptrinsic)
 
-Aptrinsic integration for [Analytics.js][].
+# [MOVED] Analytics JS integration aptrinsic
 
-## License
+**This repository has been moved to the open source [Analytics JS Integrations](https://github.com/segmentio/analytics.js-integrations).**
+
+If you want to fork, contribute, or open issues, please do it in the new repository. Existing issues/pull requests will be addressed in the new location.
+
+* [New location](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/aptrinsic)
+* Last release for this repository: [1.0.0](https://github.com/segment-integrations/analytics.js-integration-aptrinsic/releases/tag/1.0.0)
+* [Commit](https://github.com/segmentio/analytics.js-integrations/commit/21ffe4e708a9d6f4a109e295809bd3d60c1c7c7e)
+* [Previous version of this README](README-OLD.md)
 
 Released under the [MIT license](LICENSE).
-
-
-[Analytics.js]: https://segment.com/docs/libraries/analytics.js/
-[ci-link]: https://circleci.com/gh/segment-integrations/analytics.js-integration-aptrinsic
-[ci-badge]: https://circleci.com/gh/segment-integrations/analytics.js-integration-aptrinsic.svg?style=svg
